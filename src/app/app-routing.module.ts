@@ -8,9 +8,9 @@ import {GetReqComponent} from "./components/get-req/get-req.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'addReq', pathMatch: 'full'},
-  { path: 'connexion', component: LoginComponent},
   { path: 'addReq', component: AddReqComponent},
   { path: 'getReq', component: GetReqComponent},
+  { path: 'connexion', component: LoginComponent},
   { path: '404', component: Page404Component },
   { path: '**', redirectTo: '404'}
 ];
