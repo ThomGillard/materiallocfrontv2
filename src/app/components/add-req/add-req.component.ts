@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
+import {MaterialService} from "../../services/material.service";
 
 @Component({
   selector: 'app-add-req',
@@ -8,4 +9,5 @@ import {Router} from "@angular/router";
   styleUrls: ['./add-req.component.scss']
 })
 export class AddReqComponent {
+  materials: any;
 }

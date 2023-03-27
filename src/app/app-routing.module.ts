@@ -4,10 +4,12 @@ import {Page404Component} from "./components/page404/page404.component";
 import {LoginComponent} from "./auth/login/login.component";
 import {AddReqComponent} from "./components/add-req/add-req.component";
 import {GetReqComponent} from "./components/get-req/get-req.component";
+import {RoomCreateComponent} from "./components/room-create/room-create.component";
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'addReq', pathMatch: 'full'},
+  { path: '', redirectTo: 'room-list', pathMatch: 'full'},
+  { path: 'Create new room', component: RoomCreateComponent},
   { path: 'addReq', component: AddReqComponent},
   { path: 'getReq', component: GetReqComponent},
   { path: 'connexion', component: LoginComponent},

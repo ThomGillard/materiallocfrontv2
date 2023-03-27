@@ -11,6 +11,8 @@ import { AddReqComponent } from './components/add-req/add-req.component';
 import { GetReqComponent } from './components/get-req/get-req.component';
 import {HttpClientModule} from "@angular/common/http";
 import { RoomListComponent } from './components/room-list/room-list.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { RoomCreateComponent } from './components/room-create/room-create.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,15 @@ import { RoomListComponent } from './components/room-list/room-list.component';
     RegisterComponent,
     AddReqComponent,
     GetReqComponent,
-    RoomListComponent
+    RoomListComponent,
+    RoomCreateComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

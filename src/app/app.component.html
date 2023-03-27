@@ -2,7 +2,14 @@
 
 <app-header/>
 <main>
-  <app-room-list></app-room-list>
+  <div>
+    <app-room-list></app-room-list>
+    <br>
+    <router-outlet></router-outlet>
+    <app-room-create></app-room-create>
+
+
+   </div>
   <div class="container">
     <div class="content">
       <router-outlet/></div>
