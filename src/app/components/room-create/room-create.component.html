@@ -1,12 +1,48 @@
-<h2>Create a new Room</h2>
-
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input type="number" placeholder="number" formControlName="number"/><br>
-  <input type="number" placeholder="capacity" formControlName="capacity"/><br>
-  <input type="checkbox" formControlName="studentAccess"/><label>student access</label><br>
-  <select multiple  formControlName="materialsId">
-    <option [value]="mat.id" *ngFor="let mat of materials">{{mat.name}}</option>
-  </select><br>
-
-  <button type="submit">submit</button>
-</form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    h2 {
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Crée une nouvelle salle de cours :</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="bg-light p-3 rounded">
+    <div class="form-group">
+      <label class="form-label" for="number">Numéro :</label>
+      <input type="number" class="form-control" id="number" placeholder="Numéro" formControlName="number"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="capacity">Capacité :</label>
+      <input type="number" class="form-control" id="capacity" placeholder="Capacité" formControlName="capacity"/>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="studentAccess" formControlName="studentAccess"/>
+      <label class="form-check-label" for="studentAccess">Accès étudiant</label>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="materialsId">Matériel :</label>
+      <select multiple class="form-select" id="materialsId" formControlName="materialsId">
+        <option [value]="mat.id" *ngFor="let mat of materials">{{mat.name}}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
