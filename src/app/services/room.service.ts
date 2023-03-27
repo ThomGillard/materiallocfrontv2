@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {RoomModel} from "../models/room.model";
+import {BehaviorSubject, Observable} from "rxjs";
+import {Room} from "../models/room.model";
 import {RoomCreateComponent} from "../components/room-create/room-create.component";
 
 @Injectable({
@@ -9,11 +9,17 @@ import {RoomCreateComponent} from "../components/room-create/room-create.compone
 })
 export class RoomService {
   private readonly  BASE_URL ='http://localhost:8080/api/room';
+  private _roomsChanged = new BehaviorSubject<undefined>(undefined)
 
+
+
+  get $roomChanged() {
+    return this._roomsChanged.asObservable();
+  }
   constructor(private readonly  _httpClient: HttpClient) { }
 
-  getAll(): Observable<RoomModel[]>{
-    return this._httpClient.get<RoomModel[]>(this.BASE_URL);
+  getAll(): Observable<Room[]>{
+    return this._httpClient.get<Room[]>(this.BASE_URL);
   }
 
   create(form:RoomCreateComponent): Observable<never>{

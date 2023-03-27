@@ -1,4 +1,4 @@
-export interface MaterialModel{
+export interface Material{
   "id": number;
   "name": "string";
 }

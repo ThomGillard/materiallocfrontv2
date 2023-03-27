@@ -1,10 +1,10 @@
-import {MaterialModel} from "./material.model";
+import {Material} from "./material.model";
 
-export interface RoomModel {
+export interface Room {
   id: number;
   number: number;
   capacity: number;
   studentAccess: boolean;
-  materials: MaterialModel[];
+  materials: Material[];
 
 }
