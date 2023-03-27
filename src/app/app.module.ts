@@ -9,6 +9,8 @@ import { Page404Component } from './components/page404/page404.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AddReqComponent } from './components/add-req/add-req.component';
 import { GetReqComponent } from './components/get-req/get-req.component';
+import {HttpClientModule} from "@angular/common/http";
+import { RoomListComponent } from './components/room-list/room-list.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import { GetReqComponent } from './components/get-req/get-req.component';
     Page404Component,
     RegisterComponent,
     AddReqComponent,
-    GetReqComponent
+    GetReqComponent,
+    RoomListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
